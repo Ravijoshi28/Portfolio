@@ -1,3 +1,5 @@
+"use client"
+
 import { useGSAP } from "@gsap/react"
 import { BookDashedIcon } from "lucide-react"
 import Link from "next/link"
