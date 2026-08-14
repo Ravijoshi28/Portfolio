@@ -46,7 +46,7 @@ export default function Contact() {
 
       <div className="mt-10 flex gap-8">
         <Link
-  href="https://github.com/yourusername"
+  href="https://github.com/Ravijoshi28"
   target="_blank"
   className="rounded-full border border-zinc-700 p-3 transition-all duration-300 hover:border-green-500 hover:-translate-y-1"
 >

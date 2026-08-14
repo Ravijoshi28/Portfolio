@@ -74,12 +74,8 @@ export default function AboutMe(){
 
             </Link>
          </div>
-         <div className="mt-5   w-fit mb-6 ">
-            <img id="code-img"
-            className="w-100"
-            src="https://imgs.search.brave.com/y8BhlJjYyh_WzXZMLDnAZ3Tml5YN6pZDN6v28HZpTic/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/aGFzaG5vZGUuY29t/L3Jlcy9oYXNobm9k/ZS9pbWFnZS91cGxv/YWQvdjE3MDk3MzQz/MjAyNzMvYmY3M2E5/NjgtZWFmNi00NWQw/LWJiYmItNmJjY2Rh/ZjU0NjZiLnBuZw"></img>
-         </div>
-      <hr className="border-1.5 border-gray-500 w-full"></hr>
+         
+      <hr className="border-1.5 m-4 p-3 border-gray-500 w-full"></hr>
         <div className="flex flex-col md:flex-row items-center gap-16 px-10 py-20">
   {/* Left */}
   <div className="md:w-1/2 space-y-6">
@@ -101,23 +97,24 @@ export default function AboutMe(){
       </p>
 
       <p>
-        I'm currently based in San Francisco and open to remote or hybrid roles
-        globally.
-      </p>
+  Open to exciting opportunities where I can learn,
+  contribute, and grow as a developer.
+</p>
     </section>
   </div>
 
   {/* Right */}
-  <div className="md:w-1/2 flex justify-center">
-    <div className="w-80 h-96 overflow-hidden rounded-2xl border border-cyan-900 shadow-2xl">
-      <img
-        src="https://imgs.search.brave.com/ldf-b-4SOJuM4kRLcWGfncDhN0R1c7S-wKaa54i6jl0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRpYTIuZGV2LnRvL2R5bmFtaWMvaW1hZ2Uvd2lkdGg9ODAwLGhlaWdodD0sZml0PXNjYWxlLWRvd24sZ3Jhdml0eT1hdXRvLGZvcm1hdD1hdXRvL2h0dHBzOi8vZGV2LXRvLXVwbG9hZHMuczMuYW1hem9uYXdzLmNvbS91cGxvYWRzL2FydGljbGVzLzZmazRrdmJtMnMxcTljeGpzeWRrLmpwZw"
-        alt="Experience"
-        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-      />
-    </div>
-  </div>
-</div>
+        <div className="md:w-1/2 flex justify-center">
+          <div className="w-150 h-96 overflow-hidden rounded-2xl border border-cyan-900 shadow-2xl">
+            <img
+              src="/ide.png"
+              alt="WebWeaver - Collaborative Web IDE"
+              className="w-fit h-full object-cover object-center transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+        </div>
+        
+        </div>
         </div>
         </>
      )

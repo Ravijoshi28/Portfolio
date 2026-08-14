@@ -14,8 +14,11 @@ export default function Home() {
    <><div className="m-0 p-0 min-h-screenh-screen font-mono scroll-smooth">
       <Navbar/>
       <AboutMe/>
+      <hr />
       <Skills/>
+      <hr />
       <Projects/>
+      <hr />
       <Contact/>
    </div>
    

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { GitBranchIcon, Share } from "lucide-react";
+import { GitBranchIcon, Share, ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -14,58 +14,96 @@ export default function Projects() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cont = useRef<HTMLDivElement>(null);
 
+  const project = [
+    {
+      name: "Saas-Workspace",
+      description:
+        "Full-stack project management platform with real-time task tracking, role-based access control, file sharing, and interactive analytics dashboards.",
+      link: "https://github.com/Ravijoshi28/ProjectManagement-__developmentphase__",
+      image:
+      "/pmlanding.png"
+        },
+    {
+      name: "BeatSync",
+      description:
+        "Spotify-inspired music streaming application integrated with live interactive chat features, custom media controls, and seamless authentication.",
+      link: "https://github.com/Ravijoshi28/spotify-clone",
+      image:
+        "/spotify.png"
+      },
+    {
+      name: "EchoChat",
+      description:
+        "High-performance, real-time messaging platform engineered with WebSocket connectivity for instant dynamic communication and responsive UI.",
+      link: "https://github.com/Ravijoshi28/app",
+      image:
+          "/chatapp.png"
+      },
+    {
+      name:"WenWeaver",
+      description:"Built a browser-based collaborative web IDE that enables users to create, edit, and preview Next.js projects in real time.",
+      link:"",
+      image:"/ideLanding.png"
+    }
+  ];
+
+  const PROJECT = project.map((p, idx) => (
+    <Link href={`/projects/${p.name}`} key={idx}>
     
+    <div
+      key={idx}
+      /* Added `group` for child hover states & smooth card scaling */
+      className="group relative w-[600px] shrink-0 rounded-xl bg-zinc-900 p-4 shadow-2xl shadow-teal-500/20 transition-all duration-300 hover:shadow-teal-400/40 cursor-pointer"
+    >
+      <div className="flex h-full flex-col gap-3">
+        <div className="flex items-center justify-between border-b border-zinc-800 pb-2">
+          <span className="text-green-400 font-mono">//project</span>
+          <div className="flex items-center gap-3">
+            <Link href={p.link} target="_blank">
+              <GitBranchIcon className="h-5 w-5 cursor-pointer hover:text-green-400 transition-colors" />
+            </Link>
+            <Share className="h-5 w-5 cursor-pointer hover:text-green-400 transition-colors" />
+          </div>
+        </div>
 
-const project=[{name:"project1",description:"about project 1",link:"sadjksd",
-    image:"https://imgs.search.brave.com/bXoZvZvnA4seJpntg8S1xbWtW-6bTO5uqEQeR9c_llE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjgv/NjkzLzM3OS9zbWFs/bC93YXRlcmNvbG9y/LWJsYWNrLWNhdC1o/YWxsb3dlZW4taXNv/bGF0ZS13aXRoLWJh/Y2tncm91bmQtY3V0/ZS1ibGFjay1jYXQt/aWxsdXN0cmF0aW9u/LXBuZy5wbmc"
-},
-{name:"project2",description:"about project 2",link:"sadjksd",
-    image:"https://imgs.search.brave.com/bXoZvZvnA4seJpntg8S1xbWtW-6bTO5uqEQeR9c_llE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjgv/NjkzLzM3OS9zbWFs/bC93YXRlcmNvbG9y/LWJsYWNrLWNhdC1o/YWxsb3dlZW4taXNv/bGF0ZS13aXRoLWJh/Y2tncm91bmQtY3V0/ZS1ibGFjay1jYXQt/aWxsdXN0cmF0aW9u/LXBuZy5wbmc"
-},
-{name:"project3",description:"about project 3",link:"sadjksd",
-    image:"https://imgs.search.brave.com/bXoZvZvnA4seJpntg8S1xbWtW-6bTO5uqEQeR9c_llE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjgv/NjkzLzM3OS9zbWFs/bC93YXRlcmNvbG9y/LWJsYWNrLWNhdC1o/YWxsb3dlZW4taXNv/bGF0ZS13aXRoLWJh/Y2tncm91bmQtY3V0/ZS1ibGFjay1jYXQt/aWxsdXN0cmF0aW9u/LXBuZy5wbmc"
-}]
-
-
-    const PROJECT=project.map((p,idx)=>(
-        <div key={idx} className="w-[600px] shadow-2xl shadow-teal-500 shrink-0p-4 rounded-xl h-fit bg-zinc-900">
-            <div className="flex flex-col gap-3  p-4 h-full">
-              <div className="flex items-center justify-between border-b pb-2">
-                <span className="text-green-400">//project</span>
-                <div className="flex items-center gap-3">
-                    <Link href={p.link} target="_blank">
-                  <GitBranchIcon className="h-5 w-5 cursor-pointer hover:text-green-400" /></Link>
-                  <Share className="h-5 w-5 cursor-pointer hover:text-green-400" />
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <div className="basis-1/2">
-                     <p className="font-sans text-2xl font-bold">{p.name}</p>
-              <p className=" text-zinc-400 text-2xl">
-               {p.description}
-              </p>
-                </div>
-               
-               <div className="basis-1/2">
-<Image
-    src={p.image}
-alt="Project screenshot"
-  width={300}
-  height={300}
-  unoptimized
-  className="h-auto w-full max-w-[300px] rounded-lg object-cover"
-/>               </div>
-              </div>
-              
+        <div className="flex gap-4">
+          <div className="basis-1/2 flex flex-col justify-between">
+            <div>
+              <p className="font-sans text-2xl font-bold text-white mb-2">{p.name}</p>
+              <p className="text-sm text-zinc-400 leading-relaxed">{p.description}</p>
             </div>
           </div>
-    ))
+
+          <div className="basis-1/2">
+            {/* Image Container with Overlay */}
+            <div className="relative h-full w-full max-w-[300px] overflow-hidden rounded-lg">
+              <Image
+                src={p.image}
+                alt="Project screenshot"
+                width={300}
+                height={300}
+                unoptimized
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/70 backdrop-blur-xs opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <span className="flex items-center gap-1 text-sm font-semibold text-green-400">
+                  View Project Details
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div></Link>
+  ));
 
   useGSAP(
     () => {
       if (!cont.current || !sectionRef.current) return;
 
-      // Calculate total horizontal distance to travel
       const getScrollAmount = () => {
         return -(cont.current!.scrollWidth - window.innerWidth);
       };
@@ -79,7 +117,7 @@ alt="Project screenshot"
           end: () => `+=${cont.current!.scrollWidth - window.innerWidth}`,
           pin: true,
           scrub: 1,
-          invalidateOnRefresh: true, // Recalculates on window resize
+          invalidateOnRefresh: true,
         },
       });
     },
@@ -93,7 +131,7 @@ alt="Project screenshot"
         <p className="text-2xl text-green-500">
           <span className="text-xl">//03. </span>Projects
         </p>
-        <h3 className="text-center text-2xl pt-3 ">Things I've have built</h3>
+        <h3 className="text-center text-2xl pt-3">Things I've built</h3>
       </div>
 
       {/* Main Horizontal Scroll Viewport */}
@@ -102,43 +140,7 @@ alt="Project screenshot"
           ref={cont}
           className="flex h-full items-center gap-20 w-max pl-[calc(50vw-300px)] pr-[calc(50vw-300px)]"
         >
-          {/* Project Card 1 */}
-
           {PROJECT}
-          {/* <div className="w-[600px] shrink-0 border-2 border-orange-500 p-4 rounded-xl h-full bg-zinc-900">
-            <div className="flex flex-col gap-3 border-2 border-red-400 p-4 h-full">
-              <div className="flex items-center justify-between border-b pb-2">
-                <span className="text-green-400">//project</span>
-                <div className="flex items-center gap-3">
-                  <GitBranchIcon className="h-5 w-5 cursor-pointer hover:text-green-400" />
-                  <Share className="h-5 w-5 cursor-pointer hover:text-green-400" />
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <div className="basis-1/2">
-                     <p className="font-sans text-2xl font-bold">Project Name One</p>
-              <p className=" text-zinc-400 text-2xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat illo
-                quibusdam hic temporibus numquam molestiae deleniti placeat porro
-                officiis magni, accusantium aperiam.
-              </p>
-                </div>
-               
-               <div className="basis-1/2">
-<Image
-  src="https://imgs.search.brave.com/bXoZvZvnA4seJpntg8S1xbWtW-6bTO5uqEQeR9c_llE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMjgv/NjkzLzM3OS9zbWFs/bC93YXRlcmNvbG9y/LWJsYWNrLWNhdC1o/YWxsb3dlZW4taXNv/bGF0ZS13aXRoLWJh/Y2tncm91bmQtY3V0/ZS1ibGFjay1jYXQt/aWxsdXN0cmF0aW9u/LXBuZy5wbmc"
-  alt="Project screenshot"
-  width={300}
-  height={300}
-  unoptimized
-  className="h-auto w-full max-w-[300px] rounded-lg object-cover"
-/>               </div>
-              </div>
-              
-            </div>
-          </div> */}
-
-         
         </div>
       </div>
     </section>
