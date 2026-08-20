@@ -21,7 +21,7 @@ const PROJECTS_DATA = [
       "Integrated file management system for task attachments",
     ],
     github: "https://github.com/Ravijoshi28/ProjectManagement-__developmentphase__",
-    liveDemo: "project-management-developmentphase.vercel.app",
+    liveDemo: "https://project-management-developmentphase.vercel.app/",
     image:
         "/pmitask.png"
   },
