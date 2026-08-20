@@ -19,7 +19,7 @@ export default function Projects() {
       name: "Saas-Workspace",
       description:
         "Full-stack project management platform with real-time task tracking, role-based access control, file sharing, and interactive analytics dashboards.",
-      link: "https://github.com/Ravijoshi28/ProjectManagement-__developmentphase__",
+      link: "project-management-developmentphase.vercel.app",
       image:
       "/pmlanding.png"
         },
