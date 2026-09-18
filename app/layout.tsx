@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ravi Joshi",
-  description: "Portfolio Website about me...",
+  title: "Ravi Joshi | Full-Stack Developer",
+  description: "Full-stack developer building thoughtful web experiences with React, Next.js, and Node.js. Explore my projects, skills, and résumé.",
 };
 
 export default function RootLayout({

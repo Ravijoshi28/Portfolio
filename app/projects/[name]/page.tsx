@@ -124,7 +124,7 @@ export default async function ProjectPage({ params }: PageProps) {
       <main className="max-w-4xl mx-auto space-y-10">
         {/* Header Section */}
         <div className="space-y-4 border-b border-zinc-800 pb-8">
-          <span className="text-sm font-mono text-green-400">// {project.subtitle}</span>
+          <span className="text-sm font-mono text-green-400">{"// "}{project.subtitle}</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white">{project.title}</h1>
           <p className="text-lg text-zinc-400 leading-relaxed">{project.description}</p>
 
