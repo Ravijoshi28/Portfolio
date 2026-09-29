@@ -8,6 +8,8 @@ const projects = [
   { name: "WenWeaver", slug: "wenweaver", category: "DEVELOPER TOOLS / COLLABORATION", description: "A collaborative browser-based IDE to create, edit, and preview web projects together.", image: "/ideLanding.png", tags: ["TypeScript", "Monaco", "Yjs"] },
   { name: "BeatSync", slug: "beatsync", category: "MUSIC / REAL-TIME", description: "Music and conversation in one place, with custom playback controls and live social chat.", image: "/spotify.png", tags: ["React", "Socket.IO", "Clerk"] },
   { name: "EchoChat", slug: "echochat", category: "COMMUNICATION / FULL-STACK", description: "A responsive messaging experience built around instant conversations and WebSocket connectivity.", image: "/chatapp.png", tags: ["React", "Express", "MongoDB"] },
+  { name: "Kubernetes-Practice", slug: "practice", category: "Practice / CLOUD / KUBERNETES", description: "A link shortner that can take custom words. Also has a click counter Optmized with redis and other functionalities .", image: "/practice.png", tags: ["Next.js", "Express", "Postgre"] },
+
 ];
 export default function Projects() {
   return <section id="projects" className="section content-width">

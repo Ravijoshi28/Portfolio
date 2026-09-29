@@ -26,6 +26,34 @@ const PROJECTS_DATA = [
         "/pmitask.png"
   },
   {
+  slug: "practice",
+  title: "Link Shortener",
+  subtitle: "Practice Project for Docker, Redis & Kubernetes",
+  description:
+    "A full-stack URL shortener built to practice backend development, Redis caching, Docker containerization, and local Kubernetes deployment.",
+  fullDescription:
+    "Built with a Next.js frontend and an Express backend using Prisma and PostgreSQL. Users can create custom short links and view their previous links. I added Redis caching while learning pagination, containerized the frontend and backend with Docker, and deployed them to a local Kubernetes cluster using Deployments and Services.",
+  techStack: [
+    "Next.js",
+    "Node.js",
+    "Express",
+    "Prisma",
+    "PostgreSQL",
+    "Redis",
+    "Docker",
+    "Kubernetes",
+  ],
+  highlights: [
+    "Custom short links and URL redirects",
+    "Paginated link history with Redis caching",
+    "Dockerized frontend and backend",
+    "Local Kubernetes deployment with Deployments and Services",
+  ],
+  github: "https://github.com/Ravijoshi28/Practice",
+  liveDemo: "YOUR_LIVE_DEMO_URL",
+  image: "/practice.png",
+},
+  {
     slug: "beatsync",
     title: "BeatSync",
     subtitle: "Music Streaming & Social Chat Platform",
