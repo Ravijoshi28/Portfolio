@@ -103,6 +103,7 @@ const PROJECTS_DATA = [
     techStack: ["Next.js", "React", "TypeScript", "Monaco" ,"Editor", "Yjs", "Zustand", "Supabase", "Redis", "Vercel SandBox", "Prisma"],
     highlights: [
       "Browser-Based Code Editor — Monaco Editor with syntax highlighting and developer-friendly editing.",
+      "Optimized WebWeaver’s collaborative editor by replacing full project tree updates with path based immutable updates and removing duplicate persistence; reduced p95 state update time 66.5% for a 1,000 file fixture (14.991 ms → 5.015 ms).",
 "Real-Time Collaboration — Multiple users can edit files simultaneously using Yjs + WebSockets.",
 "Project & File Management — Create files/folders and manage projects using full file-path-based identification.",
 "Live Project Preview — Run Next.js projects inside Vercel Sandbox containers and preview them directly in the browser.",
