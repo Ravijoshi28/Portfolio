@@ -3,6 +3,8 @@ import Image from "next/image";
 import { ArrowLeft, ExternalLink, GitBranch, CheckCircle2 } from "lucide-react";
 import { notFound } from "next/navigation";
 
+
+
 // 1. Defined project details dataset
 const PROJECTS_DATA = [
   {
@@ -50,7 +52,7 @@ const PROJECTS_DATA = [
     "Local Kubernetes deployment with Deployments and Services",
   ],
   github: "https://github.com/Ravijoshi28/Practice",
-  liveDemo: "YOUR_LIVE_DEMO_URL",
+  liveDemo: "",
   image: "/practice.png",
 },
   {
@@ -119,6 +121,26 @@ const PROJECTS_DATA = [
     image:
       "/ide.png",
   },
+  {
+    slug: "EzNotification",
+    title: "EzNotification",
+    subtitle: "Notification Service Provider",
+    description:
+      "A feature-rich SaaS application engineered for Easy development so that developer can focus on their platform building rather than using their time on notification sending.",
+    fullDescription:
+      "Built with a scalable Next.js and Node.js architecture, SaaS WorkSpace streamlines modern project workflows. Build so that u can reach ur client even when u are busy.A platform that provide multiple notification services with just one api [Push notification aside]",
+    techStack: ["Next.js", "Node.js", "Express", "postgre","Prisma", "Web push", "Tailwind CSS"],
+    highlights: [
+      "Build for developers to help them.",
+      "Background jobs so u can focus on increasing productivity. ",
+      "Interactive services and clean dashboard with precise status of ur data.",
+      "Still under development so u can expect other services.",
+    ],
+    github: "https://github.com/Ravijoshi28",
+    liveDemo: "",
+    image:
+        "/Notification_service.png"
+  },
 ];
 
 interface PageProps {
@@ -167,14 +189,15 @@ export default async function ProjectPage({ params }: PageProps) {
             >
               <GitBranch className="h-4 w-4" /> Code Repository
             </a>
-            <a
+            
+           <a
               href={project.liveDemo}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 bg-green-500 text-zinc-950 font-semibold rounded-lg hover:bg-green-400 transition-all text-sm"
             >
-              <ExternalLink className="h-4 w-4" /> Live Preview
-            </a>
+              <ExternalLink className="h-4 w-4" />{project.liveDemo===""?"Not live yet":"Live Preview"} 
+            </a> 
           </div>
         </div>
 
