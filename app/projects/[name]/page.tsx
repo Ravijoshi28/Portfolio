@@ -126,15 +126,18 @@ const PROJECTS_DATA = [
     title: "EzNotification",
     subtitle: "Notification Service Provider",
     description:
-      "A feature-rich SaaS application engineered for Easy development so that developer can focus on their platform building rather than using their time on notification sending.",
+      "A feature-rich Service application engineered for Easy development so that developer can focus on their platform building rather than using their time on notification sending.",
     fullDescription:
       "Built with a scalable Next.js and Node.js architecture, SaaS WorkSpace streamlines modern project workflows. Build so that u can reach ur client even when u are busy.A platform that provide multiple notification services with just one api [Push notification aside]",
-    techStack: ["Next.js", "Node.js", "Express", "postgre","Prisma", "Web push", "Tailwind CSS"],
+    techStack: ["Next.js", "Node.js", "Express", "postgre","Prisma", "Web push", "Tailwind CSS","NodeMailer","custom SDK"],
     highlights: [
+      "Built a custom SDK so users can directly add a toggle button to grant or deny permission [ push_notification --making life easy--]",
       "Build for developers to help them.",
       "Background jobs so u can focus on increasing productivity. ",
       "Interactive services and clean dashboard with precise status of ur data.",
-      "Still under development so u can expect other services.",
+      "Included a test route so u can see how and what u are doing.",
+      `Easy to use one ,API key for all ur services.`,
+      "Note-- Currently available services include Email & push Notification more services will be added soon..."
     ],
     github: "https://github.com/Ravijoshi28",
     liveDemo: "",
@@ -204,6 +207,7 @@ export default async function ProjectPage({ params }: PageProps) {
         {/* Project Image */}
         <div className="relative w-full  h-[300px] md:h-[450px] overflow-hidden rounded-2xl border border-zinc-800">
           <Image
+          loading="eager"
             src={project.image}
             alt={project.title}
             fill
