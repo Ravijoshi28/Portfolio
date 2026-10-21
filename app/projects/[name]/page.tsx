@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ExternalLink, GitBranch, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ExternalLink, GitBranch, CheckCircle2, PlayCircle } from "lucide-react";
 import { notFound } from "next/navigation";
 
 
@@ -126,21 +126,23 @@ const PROJECTS_DATA = [
     title: "EzNotification",
     subtitle: "Notification Service Provider",
     description:
-      "A feature-rich Service application engineered for Easy development so that developer can focus on their platform building rather than using their time on notification sending.",
+      "A developer-focused notification platform that centralizes delivery workflows, so teams can spend less time wiring notifications and more time building their product.",
     fullDescription:
-      "Built with a scalable Next.js and Node.js architecture, SaaS WorkSpace streamlines modern project workflows. Build so that u can reach ur client even when u are busy.A platform that provide multiple notification services with just one api [Push notification aside]",
-    techStack: ["Next.js", "Node.js", "Express", "postgre","Prisma", "Web push", "Tailwind CSS","NodeMailer","custom SDK"],
+      "EzNotification provides a single, developer-friendly API for reliable notification delivery. The project combines a clear operational dashboard, background processing, and a lightweight SDK to make integration and testing straightforward across email and web-push workflows.",
+    techStack: ["Next.js", "Node.js", "Express", "PostgreSQL", "Prisma", "Web Push", "Tailwind CSS", "Nodemailer", "Custom SDK"],
     highlights: [
-      "Built a custom SDK so users can directly add a toggle button to grant or deny permission [ push_notification --making life easy--]",
-      "Build for developers to help them.",
-      "Background jobs so u can focus on increasing productivity. ",
-      "Interactive services and clean dashboard with precise status of ur data.",
-      "Included a test route so u can see how and what u are doing.",
-      `Easy to use one ,API key for all ur services.`,
-      "Note-- Currently available services include Email & push Notification more services will be added soon..."
+      "One API key and integration surface for supported notification channels.",
+      "Custom SDK for handling browser push-permission requests with a simple, reusable control.",
+      "Background job processing designed to keep notification work out of the main application flow.",
+      "Operational dashboard for reviewing delivery activity and service status at a glance.",
+      "Dedicated test route for safely validating notification payloads during integration.",
+      "Email and web-push notifications are currently supported, with room to add further channels.",
     ],
     github: "https://github.com/Ravijoshi28",
     liveDemo: "",
+    demoVideo: "/EznotiDemo.mp4",
+    availabilityNote:
+      "This project is shared as a recorded demo rather than a public service because reliable notification delivery needs continuously running workers, monitored infrastructure, and budgeted provider usage. SMTP integration uses an app-specific password or provider-managed credential—not an email account's actual password—and production secrets belong in server-side environment variables. The video demonstrates the product flow and core functionality without exposing credentials or operating a delivery endpoint without the appropriate safeguards.",
     image:
         "/Notification_service.png"
   },
@@ -193,34 +195,59 @@ export default async function ProjectPage({ params }: PageProps) {
               <GitBranch className="h-4 w-4" /> Code Repository
             </a>
             
-           <a
-              href={project.liveDemo}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-green-500 text-zinc-950 font-semibold rounded-lg hover:bg-green-400 transition-all text-sm"
-            >
-              <ExternalLink className="h-4 w-4" />{project.liveDemo===""?"Not live yet":"Live Preview"} 
-            </a> 
+            {project.demoVideo ? (
+              <a
+                href="#demo"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-green-500 text-zinc-950 font-semibold rounded-lg hover:bg-green-400 transition-all text-sm"
+              >
+                <PlayCircle className="h-4 w-4" /> Watch Demo
+              </a>
+            ) : project.liveDemo ? (
+              <a
+                href={project.liveDemo}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-green-500 text-zinc-950 font-semibold rounded-lg hover:bg-green-400 transition-all text-sm"
+              >
+                <ExternalLink className="h-4 w-4" /> Live Preview
+              </a>
+            ) : null}
           </div>
         </div>
 
-        {/* Project Image */}
-        <div className="relative w-full  h-[300px] md:h-[450px] overflow-hidden rounded-2xl border border-zinc-800">
-          <Image
-          loading="eager"
-            src={project.image}
-            alt={project.title}
-            fill
-            unoptimized
-            className="object-cover"
-          />
-        </div>
+        {/* Project image or demo */}
+        {project.demoVideo ? (
+          <div id="demo" className="overflow-hidden rounded-2xl border border-zinc-800 bg-black">
+            <video controls preload="metadata" className="w-full" aria-label={`${project.title} demo video`}>
+              <source src={project.demoVideo} type="video/mp4" />
+              Your browser does not support embedded video.
+            </video>
+          </div>
+        ) : (
+          <div className="relative w-full h-[300px] md:h-[450px] overflow-hidden rounded-2xl border border-zinc-800">
+            <Image
+              loading="eager"
+              src={project.image}
+              alt={project.title}
+              fill
+              unoptimized
+              className="object-cover"
+            />
+          </div>
+        )}
 
         {/* Technical Highlights & Full Overview */}
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2 space-y-6">
             <h2 className="text-2xl font-bold text-white">Project Overview</h2>
             <p className="text-zinc-400 leading-relaxed">{project.fullDescription}</p>
+
+            {project.availabilityNote && (
+              <div className="rounded-xl border border-amber-400/30 bg-amber-400/5 p-4 text-sm leading-relaxed text-zinc-300">
+                <span className="font-semibold text-amber-300">Deployment note: </span>
+                {project.availabilityNote}
+              </div>
+            )}
 
             <h3 className="text-xl font-bold text-white pt-4">Key Features</h3>
             <ul className="space-y-3">

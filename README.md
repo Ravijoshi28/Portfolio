@@ -1,6 +1,6 @@
 # Ravi Joshi — Portfolio
 
-Personal portfolio showcasing my full-stack development work, technical skills, and résumé.
+Personal portfolio showcasing my full-stack development work, technical skills, and resume.
 
 ## Features
 
@@ -24,7 +24,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000. No environment variables are required.
+Open http://localhost:3000.
 
 Local development uses Webpack because Turbopack was stalling during compilation on this Windows setup. The homepage is `/`, not `/home`. If Next.js reports that another development server is running, stop the existing server with Ctrl+C in its terminal before starting a new one.
 
@@ -51,8 +51,8 @@ app/
     [name]/            Individual project details
   navbar/              Responsive navigation
   contact/             Contact section and footer
-  resume/              PDF résumé viewer
-public/                Project screenshots and Ravi.pdf
+  resume/              PDF resume viewer
+public/                Project screenshots and resume.pdf
 ```
 
 ## Update content
